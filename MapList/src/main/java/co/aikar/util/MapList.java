@@ -138,6 +138,10 @@ public class MapList <K, V> implements DelegatingMap<K, List<V>>, Iterable<MapLi
 
     }
 
+    public boolean containsEntry(K key, V value) {
+        return get(key).contains(value);
+    }
+
     @Override
     public void putAll(@NotNull Map<? extends K, ? extends List<V>> m) {
         m.forEach((k, values) -> get(k).addAll(values));

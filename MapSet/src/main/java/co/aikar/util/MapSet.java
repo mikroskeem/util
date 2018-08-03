@@ -155,6 +155,10 @@ public class MapSet <K, V> implements DelegatingMap<K, Set<V>>, Iterable<MapSet.
 
     }
 
+    public boolean containsEntry(K key, V value) {
+        return get(key).contains(value);
+    }
+
     @Override
     public void putAll(@NotNull Map<? extends K, ? extends Set<V>> m) {
         m.forEach((k, values) -> get(k).addAll(values));
